@@ -1,6 +1,7 @@
 //exact copy of full example code from (https://medium.com/izettle-engineering/beginners-guide-to-web-push-notifications-using-service-workers-cb3474a17679)
 const express = require('express')
 const cors = require('cors')
+const path = require('path');
 const bodyParser = require('body-parser')
 const webpush = require('web-push')
 const app = express()
