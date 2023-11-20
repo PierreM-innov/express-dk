@@ -20,7 +20,7 @@ const saveToDatabase = async subscription => {
 app.post('/save-subscription', async (req, res) => {
     const subscription = req.body
     await saveToDatabase(subscription)
-    console.log("trying to save sub")
+    console.log("trying to save sub", subscription)
     res.json({ message: 'success' })
 })
 const vapidKeys = {
@@ -41,6 +41,7 @@ const sendNotification = (subscription, dataToSend) => {
 //route to test send notification
 app.get('/send-notification', (req, res) => {
     const subscription = dummyDb.subscription
+    console.log("sub", subscription)
     const message = 'Hello World'
     sendNotification(subscription, message)
     res.json({ message: 'message sent' })
